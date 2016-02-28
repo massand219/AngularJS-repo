@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Workshop 2</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type='text/javascript' src="wksp2.js"></script>
+
+		<style>
+			.list{
+				width: 50%;
+				float: left;
+			}
+			
+			.avg{
+				width: 50%;
+				float: right;
+				margin-top: -60px;
+			}
+
+
+		</style>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="mainController as ctrl">
+
+			<h1>Student Grade Point Average</h1>
+
+			<span>Student Name: </span><input type="text" ng-model="ctrl.studentName">
+			<br>
+			<span>Assignment Number: </span><input type="text" ng-model="ctrl.assignmentNum">
+			<br>
+			<span>Grade: </span><input type="text" ng-model="ctrl.grade">/100
+			<br>
+			<br>
+
+			<button ng-click="ctrl.add()">Add Assignment and Grade</button>
+
+			<h2>List of Assignments: </h2>
+			
+			<div class="list"ng-repeat="x in ctrl.listGrade">
+				<span>Student Name: </span><span ng-bind="x.name"></span>
+				<br>
+				<span>Assignment #: </span><span ng-bind="x.assignment"></span>
+				<br>
+				<span>Grade: </span><span ng-bind="x.grade"></span>
+				<br>
+			</div>
+
+			<div class="avg">
+
+			<h2>Student Average:</h2>
+				
+			
+
+
+			</div>
+
+
+
+
+
+
+
+		</div>
+		
+	</body>
+</html>

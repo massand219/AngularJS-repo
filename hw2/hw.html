@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type='text/javascript' src="hw.js"></script>
+		<meta charset="UTF-8">
+		<title>Homework 2</title>
+		<style>
+			.High {
+				color: red;
+			}
+
+			.Medium {
+				color: green;
+			}
+
+			.Low {
+				color: blue;
+			}
+
+			.none {
+				color: black;
+			}
+		
+		</style>
+	</head>
+	<body ng-app= 'myApp'>
+		<div ng-controller='todoCtrl as ctrl'>
+			<h1>Todo List</h1>
+		
+			<span>Todo Name: </span><input type="text" ng-model='ctrl.todoName'>
+			<br>
+			<span>Todo Description: </span><input type="text" ng-model='ctrl.todoDescription'>
+			<br>
+			<h2>Select a Priority: </h2>
+			<input type="radio"
+					name= "priority"
+					value="High"
+					ng-model="ctrl.priority">High
+			<input type="radio"
+					name= "priority"
+					value="Medium"
+					ng-model="ctrl.priority">Medium
+			<input type="radio"
+					name= "priority"
+					value="Low"
+					ng-model="ctrl.priority">Low
+			<input type="radio"
+					name= "priority"
+					value="none"
+					ng-model="ctrl.priority">No Priority
+
+			<br>
+			<br>
+
+							<!-- <h4 ng-bind="ctrl.todoName"></h4>
+					<p ng-bind="ctrl.todoDescription"></p>
+				<span ng-bind="ctrl.priority"></span> -->
+
+			<button ng-click="ctrl.add()">Add Todo</button>
+
+			<h3>List of Todos</h3>
+			<div ng-repeat="x in ctrl.myTodos" >
+				<div ng-class="x.priority">
+					<div ng-bind="x.name"></div>
+					<div ng-bind="x.description"></div>
+				</div>
+
+				<br>
+				<button ng-click="ctrl.remove(x)">Remove</button>
+			</div>
+
+			<br>
+
+
+		</div>
+		
+	</body>
+</html>

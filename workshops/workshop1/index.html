@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<script src= 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js'></script>
+		<script type= 'text/javascript' src='index.js'></script>
+		<meta charset="UTF-8">
+		<title>Form</title>
+	</head>
+	<body ng-app= "MyApp">
+		<div ng-controller= "MainController as ctrl">
+			<!-- <form novalidate>
+		    First Name: <input type="text" ng-model="ctrl.user.fname">
+		    <br>
+		    Last Name: <input type="text" ng-model="ctrl.user.lname">
+		    <br>
+		    E-mail: <input type="email" ng-model="ctrl.user.email">
+		    <br>
+		    
+		    <input type="button" ng-click="edit()" value="Edit" />
+		    <input type="submit" ng-click="update(user)" value="Save" />
+		    <input type="button" ng-click="reset()" value="Cancel" />
+		  </form> -->
+			
+		<div ng-hide='ctrl.isEditing'>
+			<div>
+				<label>First: </label><span ng-bind='ctrl.user.fName'></span>
+			</div>
+			<div>
+				<label>Last: </label><span ng-bind='ctrl.user.lName'></span>
+			</div>
+			<div>
+				<label>Email: </label><span ng-bind='ctrl.user.email'></span>
+			</div>
+			<button ng-click='ctrl.onEditClicked()'>Edit</button>
+		</div>
+
+		<div ng-show='ctrl.isEditing'>
+			<div>
+				<label>First: </label><input type='text' ng-model='ctrl.copyUser.fName'>
+			</div>
+			<div>
+				<label>Last: </label><input type='text' ng-model='ctrl.copyUser.lName'>
+			</div>
+			<div>
+				<label>Email: </label><input type='text' ng-bind='ctrl.copyUser.email'>
+			</div>
+			<button ng-click='ctrl.onSaveClicked()'>Save</button>
+			<button ng-click='ctrl.onCancelClicked()'>Cancel</button>
+		</div>
+
+
+
+
+
+
+		</div>
+	</body>
+</html>
+
+
+<!-- Make a form that lets you add your fname, lname, and email; add an edit button that allows you to edit only your fname and lname but NOT email. when you click edit, edit button should go away and you should only see "save" and "cancel".  
+use ng-show, ng-hide, ng-bind (on email only) and add a boolean to ln and fn -->
