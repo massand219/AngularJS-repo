@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Playlist Creator</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type='text/javascript' src="service.js"></script>
+		<script type='text/javascript' src="playlist.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="mainController as ctrl">
+			<div>
+				<h1>Music Playlist</h1>
+				<span>User Name: </span><input type="text" ng-model="ctrl.user.name">
+				<br>
+				<span>User Age: </span><input type="text" ng-model="ctrl.user.age">
+				<br>
+			</div>
+			<div>
+				<br>
+				<h2>Select a Genre: </h2>
+				<input type="radio"
+					name= "genre"
+					value="Hip-Hop/Rap"
+					ng-model="ctrl.genre">Hip-Hop/Rap
+				<input type="radio"
+					name="genre"
+					value="RnB"
+					ng-model="ctrl.genre">RnB
+				<input type="radio"
+					name="genre"
+					value="Pop"
+					ng-model="ctrl.genre">Pop
+				<br>
+			</div>
+			<div>
+				<h2>Select a Song: </h2>
+					
+						<div ng-show="ctrl.genre">
+							<input type="checkbox"
+								ng-model="songChoice"
+							><span ng-bind="song.name"></span>
+							<div ng-show="ctrl.user.age >= 18">
+								<input type="checkbox" ng-model="ctrl.user.explicit">Explicit
+							</div>
+						</div>
+					
+
+					<div>
+						<button ng-click="ctrl.playlist.createPlaylist()">Create Playlist</button>
+					</div>
+
+			</div>
+			<br>
+			<br>
+			<div>
+				<h2>My Playlist: </h2>
+				<div ng-repeat="song in ctrl.songs">
+				<span>Song: </span><span ng-bind=" song.name"></span>
+				<br>
+				<span>Genre: </span><span ng-bind="ctrl.genre"></span>
+			</div>
+
+		</div>
+		
+	</body>
+</html>

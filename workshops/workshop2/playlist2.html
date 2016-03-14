@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Playlist Creator</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type='text/javascript' src="service2.js"></script>
+		<script type='text/javascript' src="playlist2.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="mainController as ctrl">
+			<div class="userInput">
+				<h1>Playlist Generator</h1>
+
+				<span>User Name: </span><input type="text" ng-model="ctrl.userName">
+				<br>
+				<span>User Age: </span><input type="text" ng-model="ctrl.userAge">
+				<br>
+			</div>
+
+			<div>
+				<p ng-bind="ctrl.userName"></p>
+				<p ng-bind="ctrl.userAge"></p>
+			</div>
+		
+		
+			<div class="selectGenre">
+				<br>
+				<h2>Select a Genre: </h2>
+				<div ng-repeat="genre in ctrl.songGenre">
+					<input type="radio"
+						name="genre"
+						ng-value="genre"
+						ng-model="ctrl.selectAGenre">
+						<label ng-bind="genre.genre"></label>
+				</div>
+				<!-- <input type="radio"
+					name="genre"
+					value="RnB"
+					ng-model="ctrl.songGenre">RnB
+				<input type="radio"
+					name="genre"
+					value="Pop"
+					ng-model="ctrl.songGenre">Pop -->
+				<br>
+			</div>
+			<br>
+
+			<div>
+				<p ng-bind="ctrl.selectAGenre.genre"></p>
+			</div>
+
+			<div class="selectSong">
+				<h2>Select a Song: </h2>
+				<div ng-repeat="song in ctrl.selectAGenre.songs">
+					<input type="checkbox"
+						name="song"
+						ng-value="name"
+						ng-model="ctrl.selectASong">
+						<label ng-bind="song.title"></label>
+				</div>
+				<br>
+				<br>
+				<div ng-show="ctrl.userAge > 18" 
+					ng-model="ctrl.explicitVersion">
+					<input type="checkbox">Explicit
+				</div>
+			</div>
+
+			<br>
+			<div class="addtoList">
+					<button ng-click="ctrl.addSongs()">Add Songs</button>
+			</div>
+			<br>
+			<br>
+			<!-- <div class="list" ng-repeat="song in ctrl.selectAGenre.songs">
+				<h2>My Playlist: </h2>
+					<span>Song Name: </span><span ng-bind="song.title"></span>
+					<br>
+					<span>Song Genre: </span><span ng-bind="ctrl.selectAGenre.genre"></span>
+					<br>
+					<span>Artist: </span><span ng-bind="song.artist"></span>
+					<br>
+			</div> -->
+
+			<div class="list" ng-repeat="song in ctrl.listSongs">
+				<h2>My Playlist: </h2>
+					<span>Song Name: </span><span ng-bind="song.title"></span>
+					<br>
+					<span>Song Genre: </span><span ng-bind="ctrl.selectAGenre.genre"></span>
+					<br>
+					<span>Artist: </span><span ng-bind="song.artist"></span>
+					<br>
+			</div>
+			
+		</div>
+	</body>
+</html>
