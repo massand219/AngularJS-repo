@@ -1,0 +1,74 @@
+<!-- <div class="container">
+ <h1 ng-bind="ctrl.greeting"></h1>
+</div> -->
+<div class="container">
+	<div class="userInput">
+		<form name="ctrl.myForm" novalidate>
+			<div playlist-name></div>
+			<span>User Name: </span><input type="text" ng-model="ctrl.userName" placeholder="Name">
+			<br>
+			<span>User Age: </span><input 
+									type="number" 
+									name="userAgeInput"
+									ng-model="ctrl.userAge" 
+									placeholder="Age" 
+									required> 
+			<span ng-show="ctrl.myForm.userAgeInput.$dirty && ctrl.myForm.userAgeInput.$invalid" style="color: red">This is a required Field</span>
+			<br>
+			<!-- <input type="submit" value="Submit Info"> -->
+			<button ng-click="ctrl.add()">Submit Info</button>
+		</form>
+	</div>
+	<div>
+		<div info-name></div>
+		<br>
+		<span>Name: </span><label ng-bind="ctrl.user.userName"></label>
+		<br>
+		<span>Age: </span><label ng-bind="ctrl.user.userAge"></label>
+	</div>
+	
+		
+		<!-- <span>Name: </span><label ng-bind="ctrl.userName"></label>
+		<br>
+		<span>Age: </span><label ng-bind="ctrl.userAge"></label> -->
+	
+
+
+	<div class="selectGenre">
+		<br>
+		<div genre-name></div>
+		<div ng-repeat="genre in ctrl.songGenre">
+			<input type="radio"
+				name="genre"
+				ng-value="genre"
+				ng-model="ctrl.selectAGenre">
+				<label ng-bind="genre.genre"></label>
+		</div>
+		<br>
+	</div>
+
+	<div>
+		<label ng-bind="ctrl.selectAGenre.genre"></label>
+	</div>
+
+	<div class="selectSong">
+		<div song-of-name></div>
+		<div ng-repeat="song in ctrl.selectAGenre.songs">
+			<input type="checkbox"
+				ng-model="song.selected">
+				<label ng-bind="song.title"></label>
+		</div>
+		<br>
+		<div ng-show="ctrl.userAge > 18" 
+			ng-model="ctrl.explicitVersion">
+			<input type="checkbox">Explicit
+		</div>
+	</div>
+
+	<br>
+
+	<div class="button">
+		<button ng-click="ctrl.showSongs()">Add to Playlist	
+		</button>
+	</div>
+</div>

@@ -1,0 +1,74 @@
+[
+	{
+		"genre": "Hip-Hop/Rap",
+		"songs": [
+			{
+				"title": "Dear Mama",
+				"artist": "Tupac",
+				"album": "Me Against the World",
+				"video": "https://www.youtube.com/watch?v=Mb1ZvUDvLDY"
+			},
+			{
+				"title": "99 Problems",
+				"artist": "Jay-Z",
+				"album": "The Black Album",
+				"video": "https://www.youtube.com/watch?v=32Xh9L-AqA8"
+			},
+			{
+				"title": "N.Y. State of Mind",
+				"artist": "Nas",
+				"album": "Illmatic",
+				"video": "https://www.youtube.com/embed/Q81lInyFZfE"
+			}
+			
+		]
+	},
+	{
+		"genre": "R&B",
+		"songs": [
+			{
+				"title": "Say Goodbye",
+				"artist": "Chris Brown",
+				"album": "Chris Brown",
+				"video": "https://www.youtube.com/watch?v=GJ26gAc7BtU"
+			},
+			{
+				"title": "4 Page Letter",
+				"artist": "Aaliyah",
+				"album": "One in a Million",
+				"video": "https://www.youtube.com/watch?v=_HN0GBRu10E"
+			},
+			{
+				"title": "Say My Name",
+				"artist": "Destiny's Child",
+				"album": "The Writing's on the Wall",
+				"video": "https://www.youtube.com/watch?v=sQgd6MccwZc"
+			}
+
+		]
+	},
+	{
+		"genre": "Pop",
+		"songs": [
+			{
+				"title": "Disturbia",
+				"artist": "Rihanna",
+				"album": "Good Girl Gone Bad",
+				"video": "https://www.youtube.com/watch?v=E1mU6h4Xdxc"
+			},
+			{
+				"title": "Hollaback Girl",
+				"artist": "Gwen Stefani",
+				"album": "The Sweet Escape",
+				"video": "https://www.youtube.com/watch?v=Kgjkth6BRRY"
+			},
+			{
+				"title": "Hello",
+				"artist": "Adele",
+				"album": "25",
+				"video": "https://www.youtube.com/watch?v=YQHsXMglC9A"
+			}
+
+		]
+	}
+]

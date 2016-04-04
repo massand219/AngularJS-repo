@@ -1,0 +1,15 @@
+<div class="container">
+	<h1>Playlist</h1>
+	<div class="fullList">
+		<h2>My Playlist: </h2>
+			<div class="list" ng-repeat="song in ctrl.selectedSongs">
+				<span>Song Name: </span><a href="/#/song-info"><span ng-bind="song.title"></span></a>
+				<br>
+				<span>Song Genre: </span><span ng-bind="song.genre"></span>
+				<br>
+				<span>Artist: </span><span ng-bind="song.artist"></span>
+				<br>
+				<br>
+		</div>
+	</div>
+</div>
