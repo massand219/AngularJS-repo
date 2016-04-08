@@ -32,7 +32,7 @@
         console.log('form submmitted')
       }
 
-      self.userInfo = [];
+      // self.userInfo = [];
     };
 
     self.add = function(){
